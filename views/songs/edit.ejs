@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+</head>
+<body>
+    <h1>Edit: "<%=song.songName%>"</h1>
+    <form action="/songs/<%=song._id%>?_method=PUT" method="POST">
+        <label for="songName">Song Name</label>
+        <input type="text" name="songName" id="songName" value="<%=song.songName%>"required>
+
+        <label for="artist">Artist Name</label>
+        <input type="text" name="artist" id="artist" value="<%=song.artist%>"required>
+
+        <label for="genre">Genre</label>
+          <select id="genre" name="genre" value="<%=song.genre%>" required>
+                <% genres.forEach(function(genre) { %>
+                    <option value="<%=genre%>"><%=genre%></option>
+                <% }); %>
+          </select>
+
+        <button type="submit">Update Song</button>
+
+        <a href="/">Home</a>
+        <a href="/songs">All songs</a>
+    </form>
+</body>
+</html>

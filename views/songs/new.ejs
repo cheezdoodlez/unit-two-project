@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add/Rate a new song</title>
+    <!-- <script src="./server.js"></script> (trying to link the server.js to this html/ejs)--> 
+</head>
+
+<body>
+    <h1>Add your favorite song!</h1>
+    <form action="/songs" method="POST">
+        <!-- action is url the form will send the info -->
+        <label for="songName">Song Name</label>
+        <input type="text" name="songName" id="songName">
+
+        <label for="artist">Artist Name</label>
+        <input type="text" name="artist" id="artist">
+
+        <label for="genre">Genre</label>
+          <select id="genre" name="genre" required>
+                <% genres.forEach(function(genre) { %>
+                    <option value="<%=genre%>"><%=genre%></option>
+                <% }); %>
+        </select>
+
+        <!-- <label for="releaseDate">Release Date</label>
+        <input type="date" name="releaseDate" id="releaseDate" placeholder="Release Date">
+
+        <label for="duration">Song Duration</label>
+        <input type="text" name="duration" id="duration" placeholder="MM:SS" pattern="([0-5]?[0-9]):([0-5]?[0-9])"> -->
+
+        <!-- <label for="rating">GOAT?</label>
+        <button name="rating" id="likeButton">Like</button>
+        <button name="rating" id="dislikeButton">Dislike</button>
+        <button name="rating" id="neutralButton">Meh</button>
+
+        <label for="dislike">Dislike</label> -->
+   
+        <button type="submit">Add Song</button><br>
+    
+        <a href="/">Home</a>
+        <a href='/songs'>All Songs</a>
+        <!-- <div id="likesDisplay">Likes: 0</div>
+        <div id="dislikesDisplay">Likes: 0</div>
+        <div id="neutralDisplay">Likes: 0</div> -->
+    </form>
+</body>
+
+</html>
+<!-- have to make the like and dislike button display and save the data thats entered permanently 
+ 1. mkae like/dislike a button
+ 2. make the button have a counter
+ -->
+<!-- images for image type button: -->
+<!-- https://png.pngtree.com/png-clipart/20231016/original/pngtree-thumbs-down-casual-photo-png-image_13314214.png (thumbs up) -->
+ <!-- https://photos.peopleimages.com/picture/202306/2854615-png-studio-of-an-elderly-man-in-disbelief-against-a-grey-background-fit_400_400.jpg (meh)-->
+  <!-- https://toppng.com/uploads/preview/guy-with-thumbs-up-transparent-115498907936rzsscfeso.png (thumbs up)-->  

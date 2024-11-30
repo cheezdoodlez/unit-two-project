@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=song.songName%></title>
+</head>
+<body>
+    <h1>Name: <%=song.songName%> <br>
+        Artist: "<%=song.artist%>"<br>
+        Genre: <%=song.genre%>
+        </h1>
+    <form action="/songs/<%=song._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete "<%=song.songName%>"</button>
+    </form>
+    <a href="/songs/<%=song._id%>/edit">Edit <%=song.songName%></a>
+    <a href="/songs">All songs</a>
+    <a href='/songs/new'>Add Song</a>
+</body>
+</html>
